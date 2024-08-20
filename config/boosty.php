@@ -5,8 +5,8 @@ declare(strict_types=1);
 return [
     'default' => env('BOOSTY_BLOG'),
 
-    'model' => [
-        'connection' => env('QUEUE_CONNECTION'),
-        'table'      => env('BOOSTY_TABLE', 'boosty'),
+    'database' => [
+        'connection' => env('BOOSTY_DB_CONNECTION', env('DB_CONNECTION')),
+        'table'      => env('BOOSTY_DB_TABLE'),
     ],
 ];

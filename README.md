@@ -4,6 +4,10 @@
 
 ## TODO:
 
+- [ ] console commands
+    - [x] register
+    - [ ] refresh
+    - [x] delete
 - [ ] auth
     - [ ] refresh
     - [ ] is authorized
@@ -63,29 +67,29 @@
 
 ### 1.0
 
-1. initial setup
-2. auth
-3. blogs management
-4. console command to refresh token
-5. media
-6. posts
-7. comments
-8. make tests
-9. make documentation
-10. make a project as public
+1. [x] initial setup
+2. [ ] auth
+3. [ ] blogs management
+4. [ ] console commands
+5. [ ] media
+6. [ ] posts
+7. [ ] comments
+8. [ ] make tests
+9. [ ] make documentation
+10. [ ] make a project as public
 
 ### 1.1
 
-1. goals
-2. promo
+1. [ ] goals
+2. [ ] promo
 
 ### 1.2
 
-1. me
-2. socials
-3. subscriptions
+1. [ ] me
+2. [ ] socials
+3. [ ] subscriptions
 
 ### 1.3
 
-1. moderation
-2. agents
+1. [ ] moderation
+2. [ ] agents

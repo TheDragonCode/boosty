@@ -13,7 +13,7 @@ class RefreshCommand extends Command
 {
     public function handle(Model $model): void
     {
-        $model->lazy(
+        $model->each(
             fn (Boosty $boosty) => $this->components->task($boosty->blog, fn () => $this->refresh($boosty))
         );
     }

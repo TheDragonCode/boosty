@@ -16,17 +16,12 @@ class Boosty extends Model
         'blog',
         'token',
         'refresh',
-        'expires_at',
-    ];
-
-    protected $casts = [
-        'expires_at' => 'datetime',
     ];
 
     public function __construct(array $attributes = [])
     {
-        $this->setConnection(config('boosty.model.connection'));
-        $this->setTable(config('boosty.model.table'));
+        $this->setConnection(config('boosty.database.connection'));
+        $this->setTable(config('boosty.database.table'));
 
         parent::__construct($attributes);
     }
