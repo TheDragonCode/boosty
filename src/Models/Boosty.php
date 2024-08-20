@@ -12,8 +12,6 @@ class Boosty extends Model
 
     public $timestamps = false;
 
-    protected $table = 'boosty';
-
     protected $fillable = [
         'blog',
         'token',
@@ -24,4 +22,12 @@ class Boosty extends Model
     protected $casts = [
         'expires_at' => 'datetime',
     ];
+
+    public function __construct(array $attributes = [])
+    {
+        $this->setConnection(config('boosty.model.connection'));
+        $this->setTable(config('boosty.model.table'));
+
+        parent::__construct($attributes);
+    }
 }
