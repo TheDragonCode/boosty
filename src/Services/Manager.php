@@ -21,17 +21,20 @@ use DragonCode\Boosty\Models\Boosty;
 class Manager
 {
     public function __construct(
-        protected Boosty $model,
-        protected Model $repository
+        protected Boosty $model
     ) {}
 
-    public function setBlog(string $name): static
+    public function forBlog(string $name): static
     {
-        if ($this->model->blog !== $name) {
-            $this->model = $this->repository->find($name);
+        if ($this->model->blog === $name) {
+            return $this;
         }
 
-        return $this;
+        app()->bind(static::class . ':' . $name, fn () => new static(
+            app(Model::class)->find($name)
+        ));
+
+        return app(static::class . ':' . $name);
     }
 
     public function auth(): Auth

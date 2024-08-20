@@ -4,9 +4,9 @@
 
 ## TODO:
 
-- [ ] console commands
+- [x] console commands
     - [x] register
-    - [ ] refresh
+    - [x] refresh
     - [x] delete
 - [ ] auth
     - [ ] refresh
@@ -68,9 +68,9 @@
 ### 1.0
 
 1. [x] initial setup
-2. [ ] auth
-3. [ ] blogs management
-4. [ ] console commands
+2. [x] console commands
+3. [ ] auth
+4. [ ] blogs management
 5. [ ] media
 6. [ ] posts
 7. [ ] comments

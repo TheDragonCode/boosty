@@ -36,8 +36,7 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this->app->bind(Manager::class, function (Application $app) {
             $config = $app->make(Model::class)->find(
-                name : $app['config']->get('boosty.default'),
-                throw: false
+                $app['config']->get('boosty.default')
             );
 
             return $this->app->make(Manager::class, [$config]);

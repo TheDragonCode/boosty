@@ -27,15 +27,11 @@ class Model
             ->delete();
     }
 
-    public function find(?string $name, bool $throw = true): Boosty
+    public function find(?string $name): Boosty
     {
         return Boosty::query()
             ->when($name, fn (Builder $builder) => $builder->where('blog', $name))
-            ->when(
-                $throw,
-                fn (Builder $builder) => $builder->firstOrFail(),
-                fn (Builder $builder) => $builder->first()
-            );
+            ->firstOrFail();
     }
 
     public function each(Closure $callback): void
