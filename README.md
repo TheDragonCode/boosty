@@ -70,18 +70,18 @@
 1. [x] initial setup
 2. [x] console commands
 3. [x] auth
-4. [ ] blogs management
-5. [ ] media
-6. [ ] posts
-7. [ ] comments
-8. [ ] make tests
-9. [ ] make documentation
-10. [ ] make a project as public
+4. [ ] media
+5. [ ] posts
+6. [ ] comments
+7. [ ] make tests
+8. [ ] make documentation
+9. [ ] make a project as public
 
 ### 1.1
 
 1. [ ] goals
 2. [ ] promo
+3. [ ] blogs management
 
 ### 1.2
 
