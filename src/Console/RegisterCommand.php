@@ -30,8 +30,9 @@ class RegisterCommand extends Command
                 validate   : ['blog' => ['string', 'max:255', 'regex:/^[a-zA-Z0-9\-]+$/i']],
                 name       : 'blog',
             )
-            ->text(label: 'What is your token?', required: true, name: 'token')
-            ->text(label: 'What is your refresh token?', required: true, name: 'refresh')
+            ->text(label: 'What is your client ID?', required: true, name: 'client_id')
+            ->text(label: 'What is your token?', required: true, name: 'access_token')
+            ->text(label: 'What is your refresh token?', required: true, name: 'refresh_token')
             ->submit();
     }
 }

@@ -8,9 +8,9 @@
     - [x] register
     - [x] refresh
     - [x] delete
-- [ ] auth
-    - [ ] refresh
-    - [ ] is authorized
+- [x] auth
+    - [x] refresh
+    - [x] is authenticated
 - [ ] agents
     - [ ] list
     - [ ] add
@@ -69,7 +69,7 @@
 
 1. [x] initial setup
 2. [x] console commands
-3. [ ] auth
+3. [x] auth
 4. [ ] blogs management
 5. [ ] media
 6. [ ] posts

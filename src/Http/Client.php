@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace DragonCode\Boosty\Http;
 
-use DragonCode\Boosty\Data\Content\ImageData;
 use DragonCode\Boosty\Data\PostData;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
@@ -14,12 +13,11 @@ class Client
     protected string $baseUrl = 'https://api.boosty.to/v1/';
 
     public function __construct(
-        protected string $token,
-        protected string $refresh,
         protected string $blog,
+        protected string $token,
     ) {}
 
-    public function post(PostData $data)
+    public function send(PostData $data): mixed
     {
         return $this->request()
             ->post($this->url('blog/%s/post'), $data->toArray())
@@ -45,16 +43,16 @@ class Client
             ->all();
     }
 
-    protected function url(string $template): string
-    {
-        return sprintf($template, $this->blog);
-    }
-
-    protected function request(): PendingRequest
+    public function request(): PendingRequest
     {
         return Http::acceptJson()->asForm()->withHeader(
             'Authorization',
             'Bearer ' . $this->token,
         )->baseUrl($this->baseUrl);
+    }
+
+    protected function url(string $template): string
+    {
+        return sprintf($template, $this->blog);
     }
 }

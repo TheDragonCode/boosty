@@ -21,7 +21,8 @@ use DragonCode\Boosty\Models\Boosty;
 class Manager
 {
     public function __construct(
-        protected Boosty $model
+        protected Boosty $model,
+        protected Model $repository,
     ) {}
 
     public function forBlog(string $name): static
@@ -31,7 +32,8 @@ class Manager
         }
 
         app()->bind(static::class . ':' . $name, fn () => new static(
-            app(Model::class)->find($name)
+            $this->repository->find($name),
+            $this->repository
         ));
 
         return app(static::class . ':' . $name);
@@ -39,61 +41,61 @@ class Manager
 
     public function auth(): Auth
     {
-        return new Auth($this->model->blog, $this->model->token);
+        return new Auth($this->model->blog, $this->model->access_token);
     }
 
     public function agents(): Agent
     {
-        return new Agent($this->model->blog, $this->model->token);
+        return new Agent($this->model->blog, $this->model->access_token);
     }
 
     public function me(): Me
     {
-        return new Me($this->model->blog, $this->model->token);
+        return new Me($this->model->blog, $this->model->access_token);
     }
 
     public function blacklist(): Blacklist
     {
-        return new Blacklist($this->model->blog, $this->model->token);
+        return new Blacklist($this->model->blog, $this->model->access_token);
     }
 
     public function comments(): Comment
     {
-        return new Comment($this->model->blog, $this->model->token);
+        return new Comment($this->model->blog, $this->model->access_token);
     }
 
     public function goals(): Goal
     {
-        return new Goal($this->model->blog, $this->model->token);
+        return new Goal($this->model->blog, $this->model->access_token);
     }
 
     public function moderation(): Moderation
     {
-        return new Moderation($this->model->blog, $this->model->token);
+        return new Moderation($this->model->blog, $this->model->access_token);
     }
 
     public function posts(): Post
     {
-        return new Post($this->model->blog, $this->model->token);
+        return new Post($this->model->blog, $this->model->access_token);
     }
 
     public function promo(): Promo
     {
-        return new Promo($this->model->blog, $this->model->token);
+        return new Promo($this->model->blog, $this->model->access_token);
     }
 
     public function socials(): Social
     {
-        return new Social($this->model->blog, $this->model->token);
+        return new Social($this->model->blog, $this->model->access_token);
     }
 
     public function subscriptions(): Subscription
     {
-        return new Subscription($this->model->blog, $this->model->token);
+        return new Subscription($this->model->blog, $this->model->access_token);
     }
 
     public function media(): Media
     {
-        return new Media($this->model->blog, $this->model->token);
+        return new Media($this->model->blog, $this->model->access_token);
     }
 }

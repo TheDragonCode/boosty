@@ -24,9 +24,10 @@ class RefreshCommand extends Command
 
     protected function refresh(Boosty $boosty): void
     {
-        $token = $this->auth($boosty->blog, $boosty->token)->refresh($boosty->refresh);
+        $token = $this->auth($boosty->blog, $boosty->access_token)
+            ->refresh($boosty->refresh_token, $boosty->client_id);
 
-        $boosty->update(['token' => $token]);
+        $boosty->update($token->toArray());
     }
 
     protected function auth(string $blog, string $token): Auth

@@ -14,8 +14,10 @@ return new class extends Migration {
         $this->schema()->create($this->table(), function (Blueprint $table) {
             $table->string('blog')->unique();
 
-            $table->string('token');
-            $table->string('refresh')->nullable();
+            $table->uuid('client_id');
+
+            $table->string('access_token');
+            $table->string('refresh_token')->nullable();
         });
     }
 

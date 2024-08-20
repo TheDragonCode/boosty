@@ -14,8 +14,9 @@ class Boosty extends Model
 
     protected $fillable = [
         'blog',
-        'token',
-        'refresh',
+        'client_id',
+        'access_token',
+        'refresh_token',
     ];
 
     public function __construct(array $attributes = [])
