@@ -4,72 +4,13 @@ declare(strict_types=1);
 
 namespace DragonCode\Boosty\Facades;
 
-use DragonCode\Boosty\Api\Agent;
-use DragonCode\Boosty\Api\Blacklist;
-use DragonCode\Boosty\Api\Comment;
-use DragonCode\Boosty\Api\Goal;
-use DragonCode\Boosty\Api\Media;
-use DragonCode\Boosty\Api\Me;
-use DragonCode\Boosty\Api\Moderation;
-use DragonCode\Boosty\Api\Post;
-use DragonCode\Boosty\Api\Promo;
-use DragonCode\Boosty\Api\Social;
-use DragonCode\Boosty\Api\Subscription;
+use DragonCode\Boosty\Services\Manager;
+use Illuminate\Support\Facades\Facade;
 
-class Boosty
+class Boosty extends Facade
 {
-    public static function agents(): Agent
+    protected static function getFacadeAccessor(): string
     {
-        return new Agent();
-    }
-
-    public static function me(): Me
-    {
-        return new Me();
-    }
-
-    public static function blacklist(): Blacklist
-    {
-        return new Blacklist();
-    }
-
-    public static function comments(): Comment
-    {
-        return new Comment();
-    }
-
-    public static function goals(): Goal
-    {
-        return new Goal();
-    }
-
-    public static function moderation(): Moderation
-    {
-        return new Moderation();
-    }
-
-    public static function posts(): Post
-    {
-        return new Post();
-    }
-
-    public static function promo(): Promo
-    {
-        return new Promo();
-    }
-
-    public static function socials(): Social
-    {
-        return new Social();
-    }
-
-    public static function subscriptions(): Subscription
-    {
-        return new Subscription();
-    }
-
-    public static function media(): Media
-    {
-        return new Media();
+        return Manager::class;
     }
 }

@@ -4,6 +4,9 @@
 
 ## TODO:
 
+- [ ] auth
+    - [ ] refresh
+    - [ ] is authorized
 - [ ] agents
     - [ ] list
     - [ ] add
@@ -54,19 +57,22 @@
     - [ ] list
     - [ ] cancel
 - [ ] console command to refresh token
+- [ ] blogs management
 
 ## Roadmap
 
 ### 1.0
 
 1. initial setup
-2. console command to refresh token
-3. media
-4. posts
-5. comments
-6. make tests
-7. make documentation
-8. make a project as public
+2. auth
+3. blogs management
+4. console command to refresh token
+5. media
+6. posts
+7. comments
+8. make tests
+9. make documentation
+10. make a project as public
 
 ### 1.1
 

@@ -13,4 +13,9 @@ abstract class Api
     abstract public function publish();
 
     abstract public function unpublish();
+
+    public function __construct(
+        protected string $blog,
+        protected string $token
+    ) {}
 }

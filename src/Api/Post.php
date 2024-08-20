@@ -6,5 +6,4 @@ namespace DragonCode\Boosty\Api;
 
 class Post extends Api
 {
-    
 }
