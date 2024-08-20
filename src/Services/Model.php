@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DragonCode\Boosty\Repositories;
+namespace DragonCode\Boosty\Services;
 
 use Closure;
 use DragonCode\Boosty\Models\Boosty;

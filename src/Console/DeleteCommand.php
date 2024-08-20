@@ -4,12 +4,18 @@ declare(strict_types=1);
 
 namespace DragonCode\Boosty\Console;
 
-use DragonCode\Boosty\Repositories\Model;
+use DragonCode\Boosty\Services\Model;
+
+use Illuminate\Console\Command;
 
 use function Laravel\Prompts\search;
 
-class DeleteCommand
+class DeleteCommand extends Command
 {
+    protected $name = 'boosty:delete';
+
+    protected $description = 'Delete a Boosty model';
+
     public function handle(Model $model): void
     {
         $model->delete(

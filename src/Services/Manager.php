@@ -17,7 +17,6 @@ use DragonCode\Boosty\Api\Promo;
 use DragonCode\Boosty\Api\Social;
 use DragonCode\Boosty\Api\Subscription;
 use DragonCode\Boosty\Models\Boosty;
-use DragonCode\Boosty\Repositories\Model;
 
 class Manager
 {

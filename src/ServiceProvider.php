@@ -7,8 +7,8 @@ namespace DragonCode\Boosty;
 use DragonCode\Boosty\Console\DeleteCommand;
 use DragonCode\Boosty\Console\RefreshCommand;
 use DragonCode\Boosty\Console\RegisterCommand;
-use DragonCode\Boosty\Repositories\Model;
 use DragonCode\Boosty\Services\Manager;
+use DragonCode\Boosty\Services\Model;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
