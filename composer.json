@@ -3,6 +3,15 @@
     "description": "The unofficial Boosty API SDK",
     "license": "MIT",
     "type": "library",
+    "keywords": [
+        "boosty",
+        "laravel",
+        "framework",
+        "sdk",
+        "dragon-code",
+        "helldar",
+        "andrey-helldar"
+    ],
     "authors": [
         {
             "name": "Andrey Helldar",
@@ -11,9 +20,9 @@
     ],
     "require": {
         "php": "^8.2",
+        "illuminate/console": "^10.0 || ^11.0",
         "illuminate/http": "^10.0 || ^11.0",
         "illuminate/support": "^10.0 || ^11.0",
-        "illuminate/console": "^10.0 || ^11.0",
         "spatie/laravel-data": "^4.8"
     },
     "require-dev": {
