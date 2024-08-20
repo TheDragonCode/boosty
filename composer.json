@@ -15,7 +15,26 @@
     "authors": [
         {
             "name": "Andrey Helldar",
-            "email": "helldar@dragon-code.pro"
+            "email": "helldar@dragon-code.pro",
+            "homepage": "https://dragon-code.pro"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/TheDragonCode/boosty/issues",
+        "source": "https://github.com/TheDragonCode/boosty"
+    },
+    "funding": [
+        {
+            "type": "boosty",
+            "url": "https://boosty.to/dragon-code"
+        },
+        {
+            "type": "yoomoney",
+            "url": "https://yoomoney.ru/to/410012608840929"
+        },
+        {
+            "type": "donationalerts",
+            "url": "https://www.donationalerts.com/r/dragon_code"
         }
     ],
     "require": {
@@ -23,8 +42,8 @@
         "illuminate/console": "^10.0 || ^11.0",
         "illuminate/http": "^10.0 || ^11.0",
         "illuminate/support": "^10.0 || ^11.0",
-        "spatie/laravel-data": "^4.8",
-        "laravel/prompts": "^0.1.25"
+        "laravel/prompts": "^0.1.25",
+        "spatie/laravel-data": "^4.8"
     },
     "require-dev": {
         "orchestra/testbench": "^8.0 || ^9.0",
@@ -32,14 +51,32 @@
         "symfony/var-dumper": "^6.0 || ^7.0"
     },
     "minimum-stability": "stable",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "DragonCode\\Boosty\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "config": {
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "dragon-code/codestyler": true,
+            "friendsofphp/php-cs-fixer": true,
+            "pestphp/pest-plugin": true,
+            "symfony/thanks": true
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DragonCode\\Boosty\\ServiceProvider"
+            ]
         }
     }
 }
