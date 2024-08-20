@@ -8,7 +8,7 @@ use DragonCode\Boosty\Api\Agent;
 use DragonCode\Boosty\Api\Blacklist;
 use DragonCode\Boosty\Api\Comment;
 use DragonCode\Boosty\Api\Goal;
-use DragonCode\Boosty\Api\Image;
+use DragonCode\Boosty\Api\Media;
 use DragonCode\Boosty\Api\Me;
 use DragonCode\Boosty\Api\Moderation;
 use DragonCode\Boosty\Api\Post;
@@ -68,8 +68,8 @@ class Boosty
         return new Subscription();
     }
 
-    public static function images(): Image
+    public static function media(): Media
     {
-        return new Image();
+        return new Media();
     }
 }

@@ -26,8 +26,9 @@
     - [ ] publish
     - [ ] unpublish
     - [ ] change
-- [ ] images
-    - [ ] upload
+- [ ] media
+    - [ ] list
+    - [ ] publish
 - [ ] moderation
     - [ ] words
         - [ ] list
@@ -60,7 +61,7 @@
 
 1. initial setup
 2. console command to refresh token
-3. images
+3. media
 4. posts
 5. comments
 6. make tests
