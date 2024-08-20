@@ -1,0 +1,34 @@
+{
+    "name": "dragon-code/boosty",
+    "description": "The unofficial Boosty API SDK",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Andrey Helldar",
+            "email": "helldar@dragon-code.pro"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/http": "^10.0 || ^11.0",
+        "illuminate/support": "^10.0 || ^11.0"
+    },
+    "require-dev": {
+        "illuminate/console": "^10.0 || ^11.0",
+        "orchestra/testbench": "^8.0 || ^9.0",
+        "pestphp/pest": "^2.35",
+        "symfony/var-dumper": "^6.0 || ^7.0"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "DragonCode\\Boosty\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
