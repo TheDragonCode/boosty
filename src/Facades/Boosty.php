@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace DragonCode\Boosty\Facades;
 
 use DragonCode\Boosty\Api\Agent;
-use DragonCode\Boosty\Api\Author;
 use DragonCode\Boosty\Api\Blacklist;
 use DragonCode\Boosty\Api\Comment;
 use DragonCode\Boosty\Api\Goal;
 use DragonCode\Boosty\Api\Image;
+use DragonCode\Boosty\Api\Me;
 use DragonCode\Boosty\Api\Moderation;
 use DragonCode\Boosty\Api\Post;
 use DragonCode\Boosty\Api\Promo;
 use DragonCode\Boosty\Api\Social;
-use DragonCode\Boosty\Api\Subscriber;
 use DragonCode\Boosty\Api\Subscription;
 
 class Boosty
@@ -24,9 +23,9 @@ class Boosty
         return new Agent();
     }
 
-    public static function author(): Author
+    public static function me(): Me
     {
-        return new Author();
+        return new Me();
     }
 
     public static function blacklist(): Blacklist
@@ -62,11 +61,6 @@ class Boosty
     public static function socials(): Social
     {
         return new Social();
-    }
-
-    public static function subscribers(): Subscriber
-    {
-        return new Subscriber();
     }
 
     public static function subscriptions(): Subscription
