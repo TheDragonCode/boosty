@@ -63,8 +63,9 @@
 3. images
 4. posts
 5. comments
-6. make documentation
-7. make a project as public
+6. make tests
+7. make documentation
+8. make a project as public
 
 ### 1.1
 
