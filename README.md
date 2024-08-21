@@ -35,7 +35,8 @@
     - [ ] change
 - [ ] media
     - [ ] list
-    - [ ] publish
+    - [x] upload
+    - [x] upload many
 - [ ] moderation
     - [ ] words
         - [ ] list

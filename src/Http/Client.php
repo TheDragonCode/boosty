@@ -17,30 +17,25 @@ class Client
         protected string $token,
     ) {}
 
-    public function send(PostData $data): mixed
+    public function send(string $uri, PostData $data): mixed
     {
         return $this->request()
-            ->post($this->url('blog/%s/post'), $data->toArray())
+            ->throw()
+            ->post($this->url($uri), $data->toArray())
             ->throw()
             ->json();
     }
 
-    public function uploadImage(ImageData $data): string
+    public function media(string $content, string $mimeType): string
     {
         return $this->request()
-            ->withBody('image body content', 'image/png')
+            ->withBody($content, $mimeType)
+            ->throw()
             ->post('https://uploadimg.boosty.to/v1/media_data/image/')
             ->throw()
             ->collect()
             ->filter()
             ->first();
-    }
-
-    public function uploadImages(array $images): array
-    {
-        return collect($images)
-            ->map(fn (string $image) => $this->uploadImage($image))
-            ->all();
     }
 
     public function request(): PendingRequest
