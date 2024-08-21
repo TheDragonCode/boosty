@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace DragonCode\Boosty\Services;
 
 use Closure;
+use DragonCode\Boosty\Exceptions\BlogNotFoundException;
 use DragonCode\Boosty\Models\Boosty;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
@@ -31,7 +32,7 @@ class Model
     {
         return Boosty::query()
             ->when($name, fn (Builder $builder) => $builder->where('blog', $name))
-            ->firstOrFail();
+            ->firstOr(callback: fn () => throw new BlogNotFoundException($name));
     }
 
     public function each(Closure $callback): void

@@ -33,8 +33,8 @@
     - [ ] publish
     - [ ] unpublish
     - [ ] change
-- [ ] media
-    - [ ] list
+- [x] media
+    - [x] list
     - [x] upload
     - [x] upload many
 - [ ] moderation
@@ -71,7 +71,7 @@
 1. [x] initial setup
 2. [x] console commands
 3. [x] auth
-4. [ ] media
+4. [x] media
 5. [ ] posts
 6. [ ] comments
 7. [ ] make tests

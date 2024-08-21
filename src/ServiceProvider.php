@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DragonCode\Boosty;
 
+use Closure;
 use DragonCode\Boosty\Console\DeleteCommand;
 use DragonCode\Boosty\Console\RefreshCommand;
 use DragonCode\Boosty\Console\RegisterCommand;
@@ -11,6 +12,7 @@ use DragonCode\Boosty\Services\Manager;
 use DragonCode\Boosty\Services\Model;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Client\Response;
+use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Spatie\LaravelData\Data;
 
@@ -75,8 +77,12 @@ class ServiceProvider extends BaseServiceProvider
 
     protected function bootHttpMacros(): void
     {
-        Response::macro('toInstance', function (Data|string $class) {
+        Response::macro('toInstance', function (Data|string $class): Data {
             return $class::from($this->json());
+        });
+
+        Response::macro('toCollection', function (Closure|Data|string $instance, ?string $key = null): Collection {
+            return $instance::collect($this->json($key));
         });
     }
 }

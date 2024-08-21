@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace DragonCode\Boosty\Console;
 
 use DragonCode\Boosty\Services\Model;
-
 use Illuminate\Console\Command;
 
 use function Laravel\Prompts\search;
