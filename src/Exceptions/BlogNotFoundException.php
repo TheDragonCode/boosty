@@ -10,6 +10,6 @@ class BlogNotFoundException extends Exception
 {
     public function __construct(?string $blog)
     {
-        parent::__construct("Blog not found: \"$blog\".", 500);
+        parent::__construct("Blog not found: \"$blog\".");
     }
 }
