@@ -23,8 +23,13 @@ class Auth extends Api
 
     public function isAuthenticated(): bool
     {
-        return $this->client->request()
+        return $this->client->request(false)
             ->post('notification/settings')
             ->successful();
+    }
+
+    public function isNotAuthenticated(): bool
+    {
+        return ! $this->isAuthenticated();
     }
 }
