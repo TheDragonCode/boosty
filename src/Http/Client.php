@@ -43,12 +43,12 @@ class Client
             ->toInstance(MediaPostData::class);
     }
 
-    public function request(): PendingRequest
+    public function request(bool $throw = true): PendingRequest
     {
         return Http::acceptJson()->asForm()->withHeader(
             'Authorization',
             'Bearer ' . $this->token,
-        )->baseUrl($this->baseUrl)->throw();
+        )->baseUrl($this->baseUrl)->throwIf($throw);
     }
 
     protected function url(string $template): string
