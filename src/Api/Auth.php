@@ -18,7 +18,7 @@ class Auth extends Api
                 'client_id'     => $clientId,
             ])
             ->throw()
-            ->toInstance(AccessTokenData::class);
+            ->toData(AccessTokenData::class);
     }
 
     public function isAuthenticated(): bool

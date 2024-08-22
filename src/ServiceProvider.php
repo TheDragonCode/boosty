@@ -4,17 +4,13 @@ declare(strict_types=1);
 
 namespace DragonCode\Boosty;
 
-use Closure;
 use DragonCode\Boosty\Console\DeleteCommand;
 use DragonCode\Boosty\Console\RefreshCommand;
 use DragonCode\Boosty\Console\RegisterCommand;
 use DragonCode\Boosty\Services\Manager;
 use DragonCode\Boosty\Services\Model;
 use Illuminate\Foundation\Application;
-use Illuminate\Http\Client\Response;
-use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Spatie\LaravelData\Data;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -29,7 +25,6 @@ class ServiceProvider extends BaseServiceProvider
         $this->bootConfig();
         $this->bootMigrations();
         $this->bootCommands();
-        $this->bootHttpMacros();
     }
 
     protected function registerConfig(): void
@@ -73,16 +68,5 @@ class ServiceProvider extends BaseServiceProvider
             RegisterCommand::class,
             DeleteCommand::class,
         ]);
-    }
-
-    protected function bootHttpMacros(): void
-    {
-        Response::macro('toInstance', function (Data|string $class): Data {
-            return $class::from($this->json());
-        });
-
-        Response::macro('toCollection', function (Closure|Data|string $instance, ?string $key = null): Collection {
-            return $instance::collect($this->json($key));
-        });
     }
 }

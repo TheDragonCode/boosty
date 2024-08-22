@@ -40,7 +40,7 @@ class Client
             ->withBody($content, $mimeType)
             ->post('https://uploadimg.boosty.to/v1/media_data/image/')
             ->throw()
-            ->toInstance(MediaPostData::class);
+            ->toData(MediaPostData::class);
     }
 
     public function request(bool $throw = true): PendingRequest

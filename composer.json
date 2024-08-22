@@ -40,6 +40,7 @@
     "require": {
         "php": "^8.2",
         "ext-fileinfo": "*",
+        "dragon-code/laravel-http-macros": "^1.0",
         "illuminate/console": "^10.0 || ^11.0",
         "illuminate/http": "^10.0 || ^11.0",
         "illuminate/support": "^10.0 || ^11.0",
